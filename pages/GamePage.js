@@ -3,17 +3,15 @@ import Router, { useRouter } from 'next/router'
 import { useState } from 'react'
 import { API } from './api/API'
 import { Container, Game, PlayersBigBox, Versus , Player,PlayerBox , Score } from './styles/GamePageStyles.js'
-import { useEffect } from 'react'
+
 
 const GamePage = () => {
 
   const router = useRouter()
 
-  //const [Index, SetIndex] = useState(0 || "")
-  let Index = 0;
+  const [Index, SetIndex] = useState(0)
   let ArrayNumbers = router.query.array || [0,1,2,3];
-  //const [ScoreNumber, SetScoreNumber] = useState(0 || "")
-  let ScoreNumber = 0;
+  const [ScoreNumber, SetScoreNumber] = useState(0)
   const [Did, SetDid] = useState(true)
 
   function Higher (){
@@ -22,8 +20,8 @@ const GamePage = () => {
       Index = 1;
     } 
     if (API[ArrayNumbers[Index + 1]].salary >= API[ArrayNumbers[Index]].salary){
-      Index++;
-      ScoreNumber++;
+      SetIndex(Index + 1);
+      SetScoreNumber(Index + 1);
 
       if ((Index + 1) === 18){
         Router.push({
@@ -51,8 +49,8 @@ const GamePage = () => {
     } 
       
     if (API[ArrayNumbers[Index + 1]].salary < API[ArrayNumbers[Index]].salary){
-      Index++;
-      ScoreNumber++;
+      SetIndex(Index + 1);
+      SetScoreNumber(Index + 1);
 
       if ((Index + 1) === 18){
         Router.push({
