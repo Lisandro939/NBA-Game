@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Router, { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import styles from '../styles/GamePage.module.css'
 import { API } from './api/API'
 import { Container, Game, PlayersBigBox, Versus , Player,PlayerBox, GameOptionsBox, Score } from './styles/GamePageStyles.js'
 
