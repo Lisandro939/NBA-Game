@@ -1,11 +1,11 @@
-/*import Head from 'next/head'
+import Head from 'next/head'
 import Router, { useRouter } from 'next/router'
 import { useState } from 'react'
 import { API } from './api/API'
 import { Container, Game, PlayersBigBox, Versus , Player,PlayerBox , Score } from './styles/GamePageStyles.js'
 
 export default function GamePage(){
-
+/*
   const router = useRouter()
 
   //const [Index, SetIndex] = useState(0 || "")
@@ -72,8 +72,10 @@ export default function GamePage(){
       })
     }
   }
-
+*/
   return (
+    <div></div>
+    /*
       <Container>
         <Head>
           <title>NBA Higher or Lower</title>
@@ -109,8 +111,8 @@ export default function GamePage(){
             </PlayerBox>
           </PlayersBigBox>
         </Game>
-      </Container>
+      </Container>*/
   )
 
   
-}*/
+}
