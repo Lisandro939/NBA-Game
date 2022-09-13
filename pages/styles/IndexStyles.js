@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 
+export default function Hola(){
+}
+
 export const Box = styled.div`
     overflow: hidden;
     display: flex;
