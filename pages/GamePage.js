@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Router, { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { API } from './api/API'
-import { Container, Game, PlayersBigBox, Versus , Player,PlayerBox, GameOptionsBox, Score } from './styles/GamePageStyles.js'
+import { Container, Game, PlayersBigBox, Versus , Player,PlayerBox , Score } from './styles/GamePageStyles.js'
 
 export default function GamePage(){
 
@@ -12,10 +12,6 @@ export default function GamePage(){
   const ArrayNumbers = router.query.array
   const [ScoreNumber, SetScoreNumber] = useState(0)
   const [Did, SetDid] = useState(true)
-
-  useEffect(() => {
-    SetIndex(0)
-  }, [])
 
   function Higher (){
     if (Did) {
