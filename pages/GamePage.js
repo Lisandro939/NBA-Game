@@ -8,22 +8,21 @@ export default function GamePage(){
 
   const router = useRouter()
 
-  const [Index, SetIndex] = useState(0)
+  //const [Index, SetIndex] = useState(0 || "")
+  let Index = 0;
   const ArrayNumbers = router.query.array
-  const [ScoreNumber, SetScoreNumber] = useState(0)
+  //const [ScoreNumber, SetScoreNumber] = useState(0 || "")
+  let ScoreNumber = 0;
   const [Did, SetDid] = useState(true)
 
   function Higher (){
     if (Did) {
       SetDid(false)
-      SetIndex(1)
+      Index = 1;
     } 
     if (API[ArrayNumbers[Index + 1]].salary >= API[ArrayNumbers[Index]].salary){
-      SetIndex(Index + 1)
-      SetScoreNumber(ScoreNumber + 1)
-
-
-
+      Index++;
+      ScoreNumber++;
 
       if ((Index + 1) === 18){
         Router.push({
@@ -51,12 +50,8 @@ export default function GamePage(){
     } 
       
     if (API[ArrayNumbers[Index + 1]].salary < API[ArrayNumbers[Index]].salary){
-      SetIndex(Index + 1)
-      SetScoreNumber(ScoreNumber + 1)
-
-
-
-
+      Index++;
+      ScoreNumber++;
 
       if ((Index + 1) === 18){
         Router.push({
