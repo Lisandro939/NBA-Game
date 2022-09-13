@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { API } from './api/API'
 import { Container, Game, PlayersBigBox, Versus , Player,PlayerBox, GameOptionsBox, Score } from './styles/GamePageStyles.js'
 
-const GamePage = ()  => {
+export default function GamePage(){
 
   const router = useRouter()
 
@@ -130,5 +130,3 @@ const GamePage = ()  => {
 
   
 }
-
-export default GamePage;
