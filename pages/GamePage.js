@@ -117,14 +117,7 @@ export default function GamePage(){
                 </section>
             </PlayerBox>
           </PlayersBigBox>
-          <GameOptionsBox>
-            <h2></h2>
-          </GameOptionsBox>
         </Game>
-
-        <footer className={styles.footer}>
-
-        </footer>
       </Container>
   )
 
