@@ -1,4 +1,4 @@
-import Head from 'next/head'
+/*import Head from 'next/head'
 import Router, { useRouter } from 'next/router'
 import { useState } from 'react'
 import { API } from './api/API'
@@ -10,7 +10,7 @@ export default function GamePage(){
 
   //const [Index, SetIndex] = useState(0 || "")
   let Index = 0;
-  const ArrayNumbers = router.query.array
+  const ArrayNumbers = router.query.array;
   //const [ScoreNumber, SetScoreNumber] = useState(0 || "")
   let ScoreNumber = 0;
   const [Did, SetDid] = useState(true)
@@ -113,4 +113,4 @@ export default function GamePage(){
   )
 
   
-}
+}*/
