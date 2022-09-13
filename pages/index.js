@@ -9,7 +9,7 @@ export default function Home(){
     console.log(API[0].name)
     }, [])
 
-    let Array = shuffle([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19])
+    let ArrayNumbers = shuffle([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19])
 
     function shuffle(array) {
         var i = array.length,
@@ -41,7 +41,7 @@ export default function Home(){
                         <Link href={{ 
                             pathname: '/GamePage', 
                             query: {
-                                array: Array
+                                array: ArrayNumbers,
                             }}} style={{ textDecoration: 'none', color: 'white' }}>Empezar</Link>
                     </button>
                 </ButtonBox>

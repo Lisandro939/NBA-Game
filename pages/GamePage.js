@@ -3,13 +3,15 @@ import Router, { useRouter } from 'next/router'
 import { useState } from 'react'
 import { API } from './api/API'
 import { Container, Game, PlayersBigBox, Versus , Player,PlayerBox , Score } from './styles/GamePageStyles.js'
+import { useEffect } from 'react'
 
-export default function GamePage(){
+const GamePage = () => {
 
   const router = useRouter()
 
   //const [Index, SetIndex] = useState(0 || "")
   let Index = 0;
+  let ArrayNumbers = router.query.array || [0,1,2,3];
   //const [ScoreNumber, SetScoreNumber] = useState(0 || "")
   let ScoreNumber = 0;
   const [Did, SetDid] = useState(true)
@@ -19,7 +21,7 @@ export default function GamePage(){
       SetDid(false)
       Index = 1;
     } 
-    if (API[router.query.array[Index + 1]].salary >= API[router.query.array[Index]].salary){
+    if (API[ArrayNumbers[Index + 1]].salary >= API[ArrayNumbers[Index]].salary){
       Index++;
       ScoreNumber++;
 
@@ -48,7 +50,7 @@ export default function GamePage(){
       SetDid(false)
     } 
       
-    if (API[router.query.array[Index + 1]].salary < API[router.query.array[Index]].salary){
+    if (API[ArrayNumbers[Index + 1]].salary < API[ArrayNumbers[Index]].salary){
       Index++;
       ScoreNumber++;
 
@@ -86,18 +88,18 @@ export default function GamePage(){
             <Versus>VS</Versus>
             <Score>Score: {ScoreNumber}</Score>
             <PlayerBox>
-              <Player img={API[router.query.array[Index]].image}/>
+              <Player img={API[ArrayNumbers[Index]].image}/>
                 <h1 className='First'>
-                  {API[router.query.array[Index]].name + " " + API[router.query.array[Index]].lastname}
+                  {API[ArrayNumbers[Index]].name + " " + API[ArrayNumbers[Index]].lastname}
                 </h1>
                 <h2 className='Number'>
                   {Intl.NumberFormat('en-EU', {style: 'currency',currency: 'USD', minimumFractionDigits: 0}).format(API[ArrayNumbers[Index]].salary)}
                 </h2>
             </PlayerBox>
             <PlayerBox>
-              <Player img={API[router.query.array[Index + 1]].image}/>
+              <Player img={API[ArrayNumbers[Index + 1]].image}/>
                 <h1 className='Second'>
-                  {API[router.query.array[Index + 1]].name + " " + API[router.query.array[Index + 1]].lastname}
+                  {API[ArrayNumbers[Index + 1]].name + " " + API[ArrayNumbers[Index + 1]].lastname}
                 </h1>
                 <h3 className='Cobra'>
                   Cobra...
@@ -114,3 +116,5 @@ export default function GamePage(){
 
   
 }
+
+export default GamePage;
