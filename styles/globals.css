@@ -6,3 +6,7 @@ html {
   font-family: "Ubuntu Bold";
   src: url("./fonts/Ubuntu-Bold.ttf");
 }
+
+html {
+  overflow: hidden;
+}

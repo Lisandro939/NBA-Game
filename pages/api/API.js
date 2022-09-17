@@ -169,6 +169,71 @@ export const API = [
     salary: 33833400,
     image: 'https://www.basquetplus.com/sites/default/files/main/articles/towns.png'
   },
+  {
+    name: 'Devin',
+    lastname: 'Booker',
+    team: 'Phoenix Suns',
+    salary: 33833400,
+    image: 'https://www.unocontraunoweb.com/wp-content/uploads/2021/06/20210620_230513-e1624241979170.jpg'
+  },
+  {
+    name: 'Kristaps',
+    lastname: 'Porzingis',
+    team: 'Washington Wizards',
+    salary: 33833400,
+    image: 'https://elsiglo.com.ve/wp-content/uploads/2022/03/kristaps-porzingis-wizards.jpg'
+  },
+  {
+    name: 'Jrue',
+    lastname: 'Holiday',
+    team: 'Milwaukee Bucks',
+    salary: 33665040,
+    image: 'https://e0.365dm.com/21/04/1600x900/skysports-nba-jrue-holiday_5330457.jpg'
+  },
+  {
+    name: 'Joel',
+    lastname: 'Embiid',
+    team: 'Philadelphia 73ers',
+    salary: 33616770,
+    image: 'https://st1.uvnimg.com/0b/e2/b5e210a24632a97d1c050c964dcf/gettyimages-1184080324.jpg'
+  },
+  {
+    name: 'Andrew',
+    lastname: 'Wiggins',
+    team: 'Golden State Warriors',
+    salary: 33616770,
+    image: 'https://storage.googleapis.com/colimdo-media/2022/06/c45ea213-andrew-wiggins-rumores-nba-salida-warriors.jpeg'
+  },
+  {
+    name: 'CJ',
+    lastname: 'McCollum',
+    team: 'New Orleans Pelicans',
+    salary: 33333333,
+    image: 'https://basketballforever.com/wp-content/uploads/2022/04/CJ-McCollum-Pelicans-scaled.jpeg'
+  },
+  {
+    name: 'Nikola',
+    lastname: 'Jokic',
+    team: 'Denver Nuggets',
+    salary: 33047803,
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Nikola_Jokic_free_throw_%28cropped%29.jpg/800px-Nikola_Jokic_free_throw_%28cropped%29.jpg'
+  },
+  {
+    name: 'James',
+    lastname: 'Harden',
+    team: 'Philadelphia 76ers',
+    salary: 33000000,
+    image: 'https://library.sportingnews.com/styles/crop_style_16_9_mobile_2x/s3/2022-05/Harden.png?itok=m_Hbgr65'
+  },
+  {
+    name: 'James',
+    lastname: 'Harden',
+    team: 'Philadelphia 76ers',
+    salary: 33000000,
+    image: 'https://library.sportingnews.com/styles/crop_style_16_9_mobile_2x/s3/2022-05/Harden.png?itok=m_Hbgr65'
+  },
+
+  
 
  
 ];

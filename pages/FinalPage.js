@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -20,6 +21,11 @@ const FinalPage = () => {
     
     return (
       <BigBox>
+        <Head>
+          <title>NBA Higher or Lower</title>
+          <meta name="description" content="NBA Higher or Lower game" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
         <Background />
         <Container >
             <h1 style={{}}>{WhichState}</h1>

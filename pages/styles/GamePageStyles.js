@@ -1,6 +1,9 @@
 import styled from 'styled-components'
+import { motion } from "framer-motion";
+import * as React from 'react';
 
 export default function Hola(){
+
 }
 
 export const Container = styled.div`
@@ -11,7 +14,6 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
     background-color: black;
 `
 
@@ -19,14 +21,21 @@ export const PlayersBigBox = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around; 
+    justify-content: space-around;
+    width: 100vw;
 
     @media (max-width: 500px){
         flex-direction: column;
     }
+    // Z-INDEX -1 ESCONDERLO DETRAS PARA QUE NO SE VEA Y LUEGO DESPLAZARLO DESDE AFUERA HACIA DENTRO
+    .third {
+        position: absolute;
+        left: 100vw;
+        z-index: 0;
+    }
 `
 
-export const Versus = styled.div`
+export const Versus = styled(motion.div)`
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -73,7 +82,7 @@ export const Score = styled.div`
 `
 
    
-export const PlayerBox = styled.div`
+export const PlayerBox = styled(motion.div)`
     width: 50vw;
     height: 100vh;
     background-repeat: no-repeat;
@@ -85,6 +94,9 @@ export const PlayerBox = styled.div`
     align-items: center;
     justify-content: center;
     color: white;
+    overflow: hidden;
+
+    
 
     & h1{
         color: white;
@@ -111,12 +123,12 @@ export const PlayerBox = styled.div`
 
         & .First{
             top: 15%;
-            font-size: 10vw;
+            font-size: 9vw;
         }
 
         & .Second {
             top: 57%;
-            font-size: 10vw;
+            font-size: 9vw;
         }
         
         & .Number{
@@ -152,11 +164,12 @@ export const PlayerBox = styled.div`
     & section{
         position: absolute;
         top: 55%;
+        display: flex;
+        flex-direction: column;
     }
 
     & button {
-        margin-right: 10px;
-        margin-left: 10px;
+        margin-top: 15px;
         width: 200px;
         height: 60px;
         font-size: 200%;
