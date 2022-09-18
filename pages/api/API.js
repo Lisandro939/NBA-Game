@@ -61,7 +61,7 @@ export const API = [
     name: 'Giannis',
     lastname: 'Antetokounmpo',
     team: 'Milwaukee Bucks',
-    salary: 42492492	,
+    salary: 42492492,
     image: 'https://cnnespanol.cnn.com/wp-content/uploads/2020/12/CNN-Giannis-Antetokounmpo.jpg?quality=100&strip=info'
   },
   {
@@ -226,11 +226,53 @@ export const API = [
     image: 'https://library.sportingnews.com/styles/crop_style_16_9_mobile_2x/s3/2022-05/Harden.png?itok=m_Hbgr65'
   },
   {
-    name: 'James',
-    lastname: 'Harden',
-    team: 'Philadelphia 76ers',
-    salary: 33000000,
-    image: 'https://library.sportingnews.com/styles/crop_style_16_9_mobile_2x/s3/2022-05/Harden.png?itok=m_Hbgr65'
+    name: 'Jamal',
+    lastname: 'Murray',
+    team: 'Denver Nuggets',
+    salary: 31650600,
+    image: 'https://estaticos-cdn.sport.es/clip/29f29761-3442-4482-856a-de9ac9d8f667_source-aspect-ratio_default_0.jpg'
+  },
+  {
+    name: 'Brandon',
+    lastname: 'Ingram',
+    team: 'New Orleans Pelicans',
+    salary: 31650600,
+    image: 'https://library.sportingnews.com/styles/crop_style_16_9_mobile_2x/s3/2022-01/brandon-ingram_6g4r743pfd61l13ynjijg8ip.jpg?itok=RCvWgj-D'
+  },
+  {
+    name: "D'Angelo",
+    lastname: 'Russell',
+    team: 'Minnesota Timberwolves',
+    salary: 31377750,
+    image: 'https://www.basquetplus.com/sites/default/files/main/articles/DAngeloRussell.jpg'
+  },
+  {
+    name: 'Michael',
+    lastname: 'Porter Jr',
+    team: 'Denver Nuggets',
+    salary: 30913750,
+    image: 'https://dtvsportsimages.akamaized.net/images/2c0a3878-d20a-4a74-a881-95791260a846?width=726'
+  },
+  {
+    name: 'Shai',
+    lastname: 'Gilgeous-Alexander',
+    team: 'Oklahoma City Thunder',
+    salary: 30913750,
+    image: 'https://library.sportingnews.com/styles/crop_style_16_9_mobile_2x/s3/2022-01/shai_1hv52g1qdgm3k1217t5n1wg3n0.png?itok=RHZefIVn'
+  },
+  {
+    name: 'Donovan',
+    lastname: 'Mitchell',
+    team: 'Cleveland Cavaliers',
+    salary: 30913750,
+    image: 'https://phantom-marca.unidadeditorial.es/7243491d9dfa186c9c5aeacbe8f596be/resize/1320/f/jpg/assets/multimedia/imagenes/2022/09/01/16620610935329.jpg'
+  },
+  {
+    name: 'Deandre',
+    lastname: 'Ayton',
+    team: 'Phoenix Suns',
+    salary: 30913750,
+    image: 'https://www.gigantes.com/wp-content/uploads/2021/10/ayton.jpg'
   },
 
   

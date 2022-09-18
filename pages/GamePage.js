@@ -18,7 +18,7 @@ const GamePage = () => {
   useEffect(()=>{
     let response = JSON.parse(localStorage.getItem('array'))
     if (response == false){
-      let FirstArray = shuffle([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19])
+      let FirstArray = shuffle([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38])
       SetArrayNumbers(FirstArray) ;
       localStorage.setItem('array', 'true');
     }
@@ -48,7 +48,7 @@ const GamePage = () => {
           state: estado
         }
       })
-    }, 5000)
+    }, 1000)
   }
 
   function changePlayers(){
@@ -88,7 +88,7 @@ const GamePage = () => {
       backgroundColor: '#ff0000',
       transition: { delay: i * 0.2 },
       transitionEnd: {
-        backgroundColor: 'white'
+        backgroundColor: '#ff0000'
       }
     }))
   }
@@ -106,7 +106,7 @@ const GamePage = () => {
 
       versusRightAnimation();
       // MAX SCORE
-      if ((Index + 1) === 17){
+      if ((Index + 1) === 36){
         sendFinal('winner');
       }
     // LOSE
@@ -129,7 +129,7 @@ const GamePage = () => {
       
       versusRightAnimation();
       // MAX SCORE
-      if ((Index + 1) === 17){
+      if ((Index + 1) === 36){
         sendFinal('winner');
       }
     // LOSE
@@ -171,8 +171,8 @@ const GamePage = () => {
                   Cobra...
                 </h3>
                 <section className='Buttons'>
-                  <button onClick={() => { Higher() } }>Más</button>
-                  <button onClick={() => { Lower() } }>Menos</button>
+                  <button className='Mas' onClick={() => { Higher() } }>Más</button>
+                  <button className='Menos' onClick={() => { Lower() } }>Menos</button>
                 </section>
             </PlayerBox>
             <PlayerBox layout animate={player} className="third">

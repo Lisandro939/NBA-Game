@@ -175,15 +175,28 @@ export const PlayerBox = styled(motion.div)`
         width: 200px;
         height: 60px;
         font-size: 140%;
-        border: 2px solid white;
         border-radius: 30px;
         cursor: pointer;
         background-color: transparent;
         color: #FDFD96;
     }
+    & .Mas{
+        border: 2px solid green;
+    }
+
+    & .Mas:hover{
+        background-color: green;
+    }
+
+    & .Menos{
+        border: 2px solid red;
+    }
+
+    & .Menos:hover{
+        background-color: red;
+    }
 
     & button:hover {
-        background-color: white;
         transition: all 0.1s;
         color: black;
     }
