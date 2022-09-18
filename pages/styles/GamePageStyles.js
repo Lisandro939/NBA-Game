@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { motion } from "framer-motion";
-import * as React from 'react';
 
 export default function Hola(){
 
@@ -133,6 +132,7 @@ export const PlayerBox = styled(motion.div)`
         
         & .Number{
             top: 20%;
+            
         }
 
         & .Cobra {
@@ -151,14 +151,15 @@ export const PlayerBox = styled(motion.div)`
         position: absolute;
         top: 40%;
         font-size: 50px;
+        color: #FDFD96;
     }
 
     & h3{
         color: white;
         text-shadow: -1px -2px 8px rgba(0, 0, 0, 1);
         position: absolute;
-        top: 43%;
-        font-size: 30px;
+        top: 46%;
+        font-size: 20px;
     }
     
     & section{
@@ -166,18 +167,19 @@ export const PlayerBox = styled(motion.div)`
         top: 55%;
         display: flex;
         flex-direction: column;
+        
     }
 
     & button {
         margin-top: 15px;
         width: 200px;
         height: 60px;
-        font-size: 200%;
+        font-size: 140%;
         border: 2px solid white;
         border-radius: 30px;
         cursor: pointer;
         background-color: transparent;
-        color: white
+        color: #FDFD96;
     }
 
     & button:hover {

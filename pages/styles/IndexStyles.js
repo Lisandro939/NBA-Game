@@ -48,24 +48,11 @@ export const ButtonBox = styled.div`
 
     & button{
         text-decoration: none !important;
-        border: 1px solid black;
+        border: 1px solid white;
         border-radius: 30px;
         width: 150px;
         height: 40px;
         cursor: pointer;
-    }
-
-    & button:hover{
-        text-decoration: none !important;
-        border: 1px solid white;
-        border-radius: 30px;
-        transition: all 0.5s;
-        background-color: black;
-        color: white;
-    }
-
-    & button:hover a{
-        color: white
     }
 
     & a{
