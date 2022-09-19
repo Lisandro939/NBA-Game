@@ -240,7 +240,7 @@ export const PlayerBoxMobile = styled(motion.div)`
 
     & .First{
         top: 15%;
-        font-size: 9vw;
+        font-size: 7vw;
     }
     & .Second {
         top: 57%;
