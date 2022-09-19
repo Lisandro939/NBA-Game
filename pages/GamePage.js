@@ -2,8 +2,10 @@ import Head from 'next/head'
 import Router  from 'next/router'
 import { useEffect, useState } from 'react'
 import { API } from './api/API'
-import { Container, Game, PlayersBigBox, Versus , Player,PlayerBox , Score } from './styles/GamePageStyles.js'
-import { useAnimationControls } from 'framer-motion'
+import { Container, Game, PlayersBigBox, Versus , Player, PlayerBox, Score } from './styles/GamePageStyles.js'
+import { PlayersBigBoxMobile, PlayerBoxMobile } from './styles/GamePageStyles.js'
+import { useAnimationControls } from 'framer-motion';
+import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
 
 const GamePage = () => {
 
@@ -24,6 +26,7 @@ const GamePage = () => {
     }
     
   }, [noseusa])
+
 
 
   function shuffle(array) {
@@ -59,6 +62,7 @@ const GamePage = () => {
   }
 
   function playersAnimation(){
+    
     player.start({
       x: "-50vw",
       transition: { delay: 1.5, duration: 1},
@@ -66,6 +70,17 @@ const GamePage = () => {
         x: 0
       }
     })
+  }
+
+  function playersAnimationMobile(){
+    /*
+    player.start({
+      y: "-50vh",
+      transition: { delay: 1.5, duration: 1},
+      transitionEnd: {
+        y: 0
+      }
+    })*/
   }
 
   function versusRightAnimation(){
@@ -99,8 +114,12 @@ const GamePage = () => {
     function Higher (){
     // WIN
     if (API[ArrayNumbers[Index + 1]].salary >= API[ArrayNumbers[Index]].salary){
-
-      playersAnimation();
+      if (isBrowser){
+        playersAnimation();
+      } else {
+        playersAnimationMobile();
+      }
+      
 
       changePlayers();
 
@@ -123,7 +142,11 @@ const GamePage = () => {
     // WIN
     if (API[ArrayNumbers[Index + 1]].salary <= API[ArrayNumbers[Index]].salary){
       
-      playersAnimation();
+      if (isBrowser){
+        playersAnimation();
+      } else {
+        playersAnimationMobile();
+      }
 
       changePlayers();
       
@@ -140,51 +163,98 @@ const GamePage = () => {
     }
   }
 
-
+if (isBrowser){
   return (
     
-      <Container>
-        <Head>
-          <title>NBA Higher or Lower</title>
-          <meta name="description" content="NBA Higher or Lower game" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <Game>
-          <PlayersBigBox>
-            <Versus layout animate={controls}>VS</Versus>
-            <Score>Score: {ScoreNumber}</Score>
-            <PlayerBox layout animate={player}>
-              <Player img={API[ArrayNumbers[Index]].image}/>
-                <h1 className='First'>
-                  {API[ArrayNumbers[Index]].name + " " + API[ArrayNumbers[Index]].lastname}
-                </h1>
-                <h2 className='Number'>
-                  {Intl.NumberFormat('en-EU', {style: 'currency',currency: 'USD', minimumFractionDigits: 0}).format(API[ArrayNumbers[Index]].salary)}
-                </h2>
-            </PlayerBox>
-            <PlayerBox layout animate={player}>
-              <Player img={API[ArrayNumbers[Index + 1]].image}/>
-                <h1 className='Second'>
-                  {API[ArrayNumbers[Index + 1]].name + " " + API[ArrayNumbers[Index + 1]].lastname}
-                </h1>
-                <h3 className='Cobra'>
-                  Cobra...
-                </h3>
-                <section className='Buttons'>
-                  <button className='Mas' onClick={() => { Higher() } }>Más</button>
-                  <button className='Menos' onClick={() => { Lower() } }>Menos</button>
-                </section>
-            </PlayerBox>
-            <PlayerBox layout animate={player} className="third">
-              <Player img={API[ArrayNumbers[Index + 2]].image}/>
-                <h1 className='Second'>
-                  {API[ArrayNumbers[Index + 2]].name + " " + API[ArrayNumbers[Index + 2]].lastname}
-                </h1>
-            </PlayerBox>
-          </PlayersBigBox>
-        </Game>
-      </Container>
+    <Container>
+      <Head>
+        <title>NBA Higher or Lower</title>
+        <meta name="description" content="NBA Higher or Lower game" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Game>
+        <PlayersBigBox>
+          <Versus layout animate={controls}>VS</Versus>
+          <Score>Score: {ScoreNumber}</Score>
+          <PlayerBox layout animate={player}>
+            <Player img={API[ArrayNumbers[Index]].image}/>
+              <h1 className='First'>
+                {API[ArrayNumbers[Index]].name + " " + API[ArrayNumbers[Index]].lastname}
+              </h1>
+              <h2 className='Number'>
+                {Intl.NumberFormat('en-EU', {style: 'currency',currency: 'USD', minimumFractionDigits: 0}).format(API[ArrayNumbers[Index]].salary)}
+              </h2>
+          </PlayerBox>
+          <PlayerBox layout animate={player}>
+            <Player img={API[ArrayNumbers[Index + 1]].image}/>
+              <h1 className='Second'>
+                {API[ArrayNumbers[Index + 1]].name + " " + API[ArrayNumbers[Index + 1]].lastname}
+              </h1>
+              <h3 className='Cobra'>
+                Cobra...
+              </h3>
+              <section className='Buttons'>
+                <button className='Mas' onClick={() => { Higher() } }>Más</button>
+                <button className='Menos' onClick={() => { Lower() } }>Menos</button>
+              </section>
+          </PlayerBox>
+          <PlayerBox layout animate={player} className="third">
+            <Player img={API[ArrayNumbers[Index + 2]].image}/>
+              <h1 className='Second'>
+                {API[ArrayNumbers[Index + 2]].name + " " + API[ArrayNumbers[Index + 2]].lastname}
+              </h1>
+          </PlayerBox>
+        </PlayersBigBox>
+      </Game>
+    </Container>
+)
+} else {
+  return (
+  <Container className='mobile'>
+      <Head>
+        <title>NBA Higher or Lower</title>
+        <meta name="description" content="NBA Higher or Lower game" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Game className='mobile'>
+        <PlayersBigBoxMobile className='mobile'>
+          <Versus layout animate={controls}>VS</Versus>
+          <Score className='mobile'>Score: {ScoreNumber}</Score>
+          <PlayerBoxMobile layout animate={player}>
+            <Player img={API[ArrayNumbers[Index]].image}/>
+              <h1 className='First'>
+                {API[ArrayNumbers[Index]].name + " " + API[ArrayNumbers[Index]].lastname}
+              </h1>
+              <h2 className='Number'>
+                {Intl.NumberFormat('en-EU', {style: 'currency',currency: 'USD', minimumFractionDigits: 0}).format(API[ArrayNumbers[Index]].salary)}
+              </h2>
+          </PlayerBoxMobile>
+          <PlayerBoxMobile layout animate={player}>
+            <Player img={API[ArrayNumbers[Index + 1]].image}/>
+              <h1 className='Second'>
+                {API[ArrayNumbers[Index + 1]].name + " " + API[ArrayNumbers[Index + 1]].lastname}
+              </h1>
+              <h3 className='Cobra'>
+                Cobra...
+              </h3>
+              <section className='Buttons'>
+                <button className='Mas' onClick={() => { Higher() } }>Más</button>
+                <button className='Menos' onClick={() => { Lower() } }>Menos</button>
+              </section>
+          </PlayerBoxMobile>
+          
+          <PlayerBoxMobile layout animate={player} className="thirdMobile">
+            <Player img={API[ArrayNumbers[Index + 2]].image}/>
+              <h1 className='Second'>
+                {API[ArrayNumbers[Index + 2]].name + " " + API[ArrayNumbers[Index + 2]].lastname}
+              </h1>
+          </PlayerBoxMobile>
+        </PlayersBigBoxMobile>
+      </Game>
+    </Container>
   )
+}
+  
 
   
 }
